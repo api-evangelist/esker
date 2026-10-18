@@ -1,0 +1,7 @@
+generated: '2026-10-18'
+method: none
+source: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+envelope_field: null
+masked_to_buyers: []
+decline_codes: []
+note: "Esker is not a payments/authorization provider; it's a document automation and order management platform. No decline codes documented."

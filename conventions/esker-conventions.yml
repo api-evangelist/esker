@@ -1,0 +1,35 @@
+generated: '2026-10-18'
+method: searched
+source: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Programming_with_the_Esker_Web_Service_API_v2.html
+auth_style: "SOAP header-based session authentication"
+idempotency:
+  coverage: none
+  description: "No idempotency mechanism documented for SOAP API"
+pagination:
+  style: "Cursor-based with QueryFirst, QueryNext, QueryPrevious, QueryLast methods"
+  description: "QueryService provides pagination methods for retrieving job lists"
+  parameters:
+  - name: queryRequest
+    in: body
+    description: "Contains pagination parameters"
+error_envelope:
+  format: "SOAP fault"
+  description: "Errors returned as SOAP faults"
+request_id_tracing: "Not documented"
+versioning:
+  method: "URL/endpoint based"
+  header: null
+reversibility:
+  operations:
+  - operation: "Cancel"
+    service: "QueryService"
+    description: "Cancel a submitted job"
+    window: "Not documented"
+  - operation: "Resubmit"
+    service: "QueryService"
+    description: "Resubmit a job"
+    window: "Not documented"
+  - operation: "Approve/Reject"
+    service: "QueryService"
+    description: "Approve or reject a job"
+    window: "Not documented"

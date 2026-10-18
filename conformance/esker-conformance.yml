@@ -1,0 +1,13 @@
+generated: '2026-10-18'
+method: searched
+source: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+standards:
+- id: SOAP
+  conforms: true
+  evidence: "The Web Service API is fully compatible with modern SOAP development environments, including, but not limited to, Visual Studio .NET and Apache Axis."
+- id: WSDL
+  conforms: true
+  evidence: "WSDL files are the descriptors of the functions and objects needed to program using Esker on Demand Web Service components."
+- id: XML Schema
+  conforms: true
+  evidence: "API uses XML Schema for data definitions in WSDL files"

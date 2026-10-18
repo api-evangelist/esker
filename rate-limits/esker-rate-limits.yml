@@ -1,0 +1,7 @@
+generated: '2026-10-18'
+method: searched
+source: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+name: Esker rate limits
+limit_count: 0
+note: "No rate limits documented in public API documentation. Service described as 'No traffic limitations' in introduction."
+limits: []

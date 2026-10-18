@@ -1,0 +1,312 @@
+name: Esker on Demand MCP (candidate)
+type: MCPServer
+generated: '2026-10-18'
+method: derived
+source:
+- wsdl/esker-session-service.wsdl
+- wsdl/esker-submission-service.wsdl
+- wsdl/esker-query-service.wsdl
+status: candidate
+description: No official Esker MCP server was found. This is a CANDIDATE tool list derived one-to-one from the operations in the Esker on Demand SOAP WSDLs (Session, Submission, Query services) saved in
+  this repo. No tool here has been served by any live server.
+deployment:
+  mode: none
+  auth: unknown
+  verified: derived
+evidence:
+- check: web search "Esker MCP server Model Context Protocol"
+  result: no Esker MCP server found
+  date: '2026-10-18'
+- check: https://www.esker.com/llms.txt (200)
+  result: no mention of MCP or a developer API
+- check: https://esker.my.site.com/mcp/v1
+  result: '401, control path also 401 (preflight verdict opaque): a Salesforce Experience Cloud site edge that authenticates every path; proves nothing about an Esker MCP server'
+auth_note: The backing SOAP API uses SessionService.Login to obtain a session ID; SessionService.GetBindings must be called first because service URLs may redirect to another server.
+tools:
+- name: session_get_bindings
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: GetBindings
+  readOnly: true
+- name: session_get_other_user_display_name
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: GetOtherUserDisplayName
+  readOnly: true
+- name: session_get_service_binding_url
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: GetServiceBindingUrl
+  readOnly: true
+- name: session_get_service_information
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: GetServiceInformation
+  readOnly: true
+- name: session_get_session_information
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: GetSessionInformation
+  readOnly: true
+- name: session_is_permission_granted
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: IsPermissionGranted
+  readOnly: true
+- name: session_login
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: Login
+  readOnly: false
+- name: session_logout
+  status: candidate
+  backing:
+    contract: wsdl/esker-session-service.wsdl
+    service: SessionService
+    operation: Logout
+  readOnly: false
+- name: submission_convert_file
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: ConvertFile
+  readOnly: false
+- name: submission_delete_resource
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: DeleteResource
+  readOnly: false
+- name: submission_download_file
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: DownloadFile
+  readOnly: true
+- name: submission_extract_first
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: ExtractFirst
+  readOnly: true
+- name: submission_extract_next
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: ExtractNext
+  readOnly: true
+- name: submission_list_resources
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: ListResources
+  readOnly: true
+- name: submission_register_resource
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: RegisterResource
+  readOnly: false
+- name: submission_retrieve_resource
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: RetrieveResource
+  readOnly: true
+- name: submission_submit
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: Submit
+  readOnly: false
+- name: submission_submit_transport
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: SubmitTransport
+  readOnly: false
+- name: submission_submit_x_m_l
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: SubmitXML
+  readOnly: false
+- name: submission_upload_file
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: UploadFile
+  readOnly: false
+- name: submission_upload_file_append
+  status: candidate
+  backing:
+    contract: wsdl/esker-submission-service.wsdl
+    service: SubmissionService
+    operation: UploadFileAppend
+  readOnly: false
+- name: query_approve
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: Approve
+  readOnly: false
+- name: query_approve_and_update_data_file
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: ApproveAndUpdateDataFile
+  readOnly: false
+- name: query_cancel
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: Cancel
+  readOnly: false
+- name: query_delete
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: Delete
+  readOnly: false
+- name: query_download_file
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: DownloadFile
+  readOnly: true
+- name: query_download_file_chunk
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: DownloadFileChunk
+  readOnly: true
+- name: query_query_attachment_vars
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryAttachmentVars
+  readOnly: true
+- name: query_query_attachments
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryAttachments
+  readOnly: true
+- name: query_query_attributes
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryAttributes
+  readOnly: true
+- name: query_query_first
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryFirst
+  readOnly: true
+- name: query_query_g_d_r_config_state
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryGDRConfigState
+  readOnly: true
+- name: query_query_last
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryLast
+  readOnly: true
+- name: query_query_next
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryNext
+  readOnly: true
+- name: query_query_previous
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryPrevious
+  readOnly: true
+- name: query_query_process_list
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryProcessList
+  readOnly: true
+- name: query_query_statistics
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: QueryStatistics
+  readOnly: true
+- name: query_reject
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: Reject
+  readOnly: false
+- name: query_resubmit
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: Resubmit
+  readOnly: false
+- name: query_update
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: Update
+  readOnly: false
+- name: query_update_data_file
+  status: candidate
+  backing:
+    contract: wsdl/esker-query-service.wsdl
+    service: QueryService
+    operation: UpdateDataFile
+  readOnly: false

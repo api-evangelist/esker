@@ -1,0 +1,16 @@
+generated: '2026-10-18'
+method: searched
+source: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Quick_Start.html
+schemes:
+- type: username_password
+  name: Session-based authentication
+  description: "Authentication via username and password through SessionService.Login method, which creates a session context used by other services"
+  docs: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/References/API/SessionService_Login_meth.html
+  flow: "1. Call GetBindings to get service URLs, 2. Call Login with username/password to create session, 3. Use session ID in subsequent requests"
+  parameters:
+  - name: userName
+    in: body
+    required: true
+  - name: password
+    in: body
+    required: true

@@ -1,23 +1,192 @@
 aid: esker
+
 name: Esker
-description: 'Esker is a company surfaced via the API Evangelist harvest backlog (source: kin-score-markets)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Esker is a software company that automates document-driven business processes for the Office of the CFO, with
+  cloud solutions spanning Source-to-Pay (accounts payable, procurement) and Order-to-Cash (order management, credit, collections,
+  e-invoicing), plus document delivery, fax (VSI-Fax) and terminal emulation products. Its site describes them as document
+  automation and order management software that helps businesses cut costs and increase efficiencies. Developers integrate
+  through the Esker on Demand Web Services API (SOAP/WSDL session, submission and query services), documented at doc.esker.com.
+
 url: https://raw.githubusercontent.com/api-evangelist/esker/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:kin-score-markets
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-18 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-18'
+
 modified: '2026-10-18'
+
 tags:
 - Company
-apis: []
+- Accounts Payable
+- Order-to-Cash
+- Source-to-Pay
+- Document Automation
+- E-Invoicing
+- Procurement
+- SOAP
+tags_raw:
+- Company
+- Accounts Payable
+- Order to Cash
+- Source to Pay
+- Document Automation
+- E-Invoicing
+- Procurement
+- SOAP
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://www.esker.com/sites/default/files/screenshot_home_us.jpg
+
 common:
+- type: Conventions
+  url: conventions/esker-conventions.yml
+- type: Compliance
+  url: https://www.esker.com/capabilities/security-certifications/
+- type: Authentication
+  url: authentication/esker-authentication.yml
+- type: Deprecation
+  url: lifecycle/esker-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/esker-lifecycle.yml
+- type: Conformance
+  url: conformance/esker-conformance.yml
+- type: LLMsTxt
+  url: llms/esker-llms.txt
+- type: WellKnown
+  url: well-known/esker-well-known.yml
+- type: Hosts
+  url: hosts/esker-hosts.yml
+- type: Vendors
+  url: vendors/esker-vendors.yml
+- type: SDKs
+  url: packages/esker-packages.yml
+- type: Packages
+  url: packages/esker-packages.yml
+- type: Newsroom
+  url: https://www.esker.com/company/press
+- type: Leadership
+  url: https://www.esker.com/company/leadership/
+- type: TrustCenter
+  url: security/esker-trust-center.yml
+- type: DomainSecurity
+  url: security/esker-domain-security.yml
 - type: Website
-  url: https://esker.com
+  url: https://www.esker.com/
+- type: Documentation
+  url: https://doc.esker.com/index.asp
+- type: APIReference
+  url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+- type: Blog
+  url: https://www.esker.com/blog/
+- type: Support
+  url: https://www.esker.com/customer-enablement/support/
+- type: HelpCenter
+  url: https://esker.my.site.com/
+- type: Security
+  url: https://www.esker.com/capabilities/security-certifications/
+- type: TermsOfService
+  url: https://www.esker.com/terms-use/
+- type: PrivacyPolicy
+  url: https://www.esker.com/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/esker/
+- type: YouTube
+  url: https://www.youtube.com/c/eskersa
+
+apis:
+- aid: esker:esker-on-demand-session-service
+  name: Esker on Demand Session Service
+  description: 'Entry point of the Esker on Demand Web Service: retrieves the service bindings (GetBindings) and opens or closes an authenticated session (Login, Logout, GetSessionInformation). SOAP 1.1 service (urn:SessionService2); the docs require calling SessionService.GetBindings first because the returned URLs may redirect to another server.'
+  humanURL: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/References/API/sessionservice.html
+  baseURL: https://as1.ondemand.esker.com/EDPWS/EDPWS.dll?Handler=Default2
+  tags:
+  - SOAP
+  - Web Services
+  properties:
+  - type: WSDL
+    url: wsdl/esker-session-service.wsdl
+  - type: WSDL
+    name: WSDL (provider-hosted)
+    url: https://as1.ondemand.esker.com/EDPWS/EDPWS.dll?Handler=GenSession2WSDL
+  - type: Documentation
+    url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+- aid: esker:esker-on-demand-submission-service
+  name: Esker on Demand Submission Service
+  description: Manages documents and submits them to Esker on Demand for processing and delivery (fax, mail, email and other transports). SOAP 1.1 service (urn:SubmissionService2); the docs require calling SessionService.GetBindings first because the returned URLs may redirect to another server.
+  humanURL: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/References/API/submissionservice.html
+  baseURL: https://as1.ondemand.esker.com/EDPWS/EDPWS.dll?Handler=Submission2Handler
+  tags:
+  - SOAP
+  - Web Services
+  properties:
+  - type: WSDL
+    url: wsdl/esker-submission-service.wsdl
+  - type: WSDL
+    name: WSDL (provider-hosted)
+    url: https://as1.ondemand.esker.com/EDPWS/EDPWS.dll?Handler=GenSubmission2WSDL
+  - type: Documentation
+    url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+- aid: esker:esker-on-demand-query-service
+  name: Esker on Demand Query Service
+  description: 'Queries and manages documents already submitted to Esker on Demand: query transports, attachments and statistics, download files, approve, cancel and resubmit. SOAP 1.1 service (urn:QueryService2); the docs require calling SessionService.GetBindings first because the returned URLs may redirect to another server.'
+  humanURL: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/References/API/QueryService_v2.html
+  baseURL: https://as1.ondemand.esker.com/EDPWS/EDPWS.dll?Handler=Query2Handler
+  tags:
+  - SOAP
+  - Web Services
+  properties:
+  - type: WSDL
+    url: wsdl/esker-query-service.wsdl
+  - type: WSDL
+    name: WSDL (provider-hosted)
+    url: https://as1.ondemand.esker.com/EDPWS/EDPWS.dll?Handler=GenQuery2WSDL
+  - type: Documentation
+    url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Bare esker.com did not answer (preflight URLError, curl 000); https://www.esker.com/ serves the Esker site and is
+    the Website. github.com/esker is an unrelated personal account and was not recorded.
+  evidence:
+  - url: https://esker.com
+    status: 0
+  - url: https://www.esker.com/
+    status: 200
+  - url: https://doc.esker.com/index.asp
+    status: 200
+  - url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+    status: 200
+  - url: https://www.esker.com/blog/
+    status: 200
+  - url: https://www.esker.com/customer-enablement/support/
+    status: 200
+  - url: https://esker.my.site.com/
+    status: 200
+  - url: https://www.esker.com/capabilities/security-certifications/
+    status: 200
+  - url: https://www.esker.com/terms-use/
+    status: 200
+  - url: https://www.esker.com/privacy-policy/
+    status: 200
+  - url: https://www.linkedin.com/company/esker/
+    status: 200
+x-enrichment:
+  date: '2026-10-18'
+  status: enriched
+  artifacts_added: 29
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=deepseek,regulatory=anthropic

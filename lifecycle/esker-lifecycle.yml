@@ -1,0 +1,10 @@
+generated: '2026-10-18'
+method: searched
+source: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Introduction_v2.html
+versioning:
+  policy: "Version 2 of Web Service API (references show '_v2' suffix)"
+  current: "v2"
+  scheme: "Major version increments"
+deprecation:
+  policy: "Not documented in public documentation"
+status_page: null

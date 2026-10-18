@@ -1,0 +1,67 @@
+generated: '2026-10-18'
+method: searched
+source: https://www.esker.com/privacy-policy/
+policy_last_updated: 'October 3, 2025'
+pages_read:
+- url: https://www.esker.com/privacy-policy/
+  http_status: 200
+- url: https://www.esker.com/terms-use/
+  http_status: 200
+- url: https://www.esker.com/capabilities/security-certifications/
+  http_status: 200
+  note: Marketing page; its readable text carried no regulatory clauses. The ai_transparency candidate on all three pages was site navigation ("Generative AI", "Discover Esker AI"), not a disclosure, so no ai_transparency signal is recorded.
+signals:
+  data_subject_request:
+    url: https://www.esker.com/privacy-policy/
+    channel: usprivacy@esker.com
+    stated_sla: 'within forty-five days of its receipt (CPRA requests), extendable to ninety days with written notice'
+    rights_named: [access, correction, amendment, deletion, CPRA disclosure]
+    evidence:
+    - source: https://www.esker.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: 'Upon request, we will provide you with access to the personal information that we hold about you. You may also correct, amend, or delete the personal information we hold about you. An individual who seeks access, or who seeks to correct, amend, or delete inaccurate data transferred to the United States under the Data Privacy Frameworks, should direct their query to usprivacy@esker.com .'
+    - source: https://www.esker.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: 'Esker will use reasonable commercial efforts to respond to a verifiable consumer request within forty-five days of its receipt. If Esker requires up to ninety days to respond, written notification will be sent to you advising of the reason for the delay.'
+    note: Access/correction/deletion rights under the EU-U.S./UK/Swiss Data Privacy Frameworks with a named mailbox, plus a CPRA response window of 45 days (up to 90). The policy also points EU individuals to supervisory authorities for GDPR complaints.
+  data_retention:
+    url: https://www.esker.com/privacy-policy/
+    section: How Personal Information is used.
+    evidence:
+    - source: https://www.esker.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: 'Esker will retain the Personal Information for no longer than is necessary for the purposes for which the Personal Information was collected.'
+    - source: https://www.esker.com/terms-use/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: 'For details on how Esker collects, uses, and stores personal information on this website as well as information on security, data retention, cookies, and opt-out options, please see https://www.esker.com/privacy-policy/ .'
+    note: A purpose-limitation retention principle only; no retention periods are stated. Scope is the Esker websites, not the cloud platform's customer data.
+  subprocessors:
+    url: https://www.esker.com/privacy-policy/
+    evidence:
+    - source: https://www.esker.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: 'Esker also engages service providers and suppliers (“agents”) to perform certain functions on Esker’s behalf such as: information processing, extending credit, fulfilling orders, delivering products to you, managing and enhancing your data, providing customer service, assessing your interest in Esker products and services, data analysis, auditing services, and conducting legitimate research or marketing satisfaction surveys.'
+    note: Discloses that third-party agents process personal data, by category of function; no named subprocessor list was found on the pages read.
+  global_privacy_control:
+    url: https://www.esker.com/privacy-policy/
+    stance: does-not-honor
+    evidence:
+    - source: https://www.esker.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: 'Because there is currently no industry standard on responding to such signals or mechanisms, Esker does not respond to them at this time.'
+    note: A denial. The clause answers Cal. Bus. & Prof. Code 22575 about browser "do not track" signals "or other mechanisms"; GPC is not named, but the stated position is that browser opt-out signals are not honored.
+  age_assurance:
+    url: https://www.esker.com/privacy-policy/
+    section: Children’s Privacy.
+    evidence:
+    - source: https://www.esker.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: 'Furthermore, Esker does not knowingly collect or solicit any Personal Information from anyone under the age of thirteen through the Esker Websites. If Esker learns that it has Personal Information on a child under the age of thirteen it will immediately be deleted from Esker’s systems.'
+    note: A minimum-age (13) statement with a deletion commitment; no age-verification mechanism is described.

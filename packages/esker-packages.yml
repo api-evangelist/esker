@@ -1,0 +1,36 @@
+generated: '2026-10-18'
+method: searched
+source: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Sample_Codes/Sample_Codes_Walkthrough_v2.html
+packages:
+- name: Esker Web Service Samples (C#)
+  registry: download
+  url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Sample_Codes/Sample_Codes_Walkthrough_v2.html
+  language: C#
+  official: true
+  version: null
+  published: null
+  note: Sample code archive for C# (.NET Framework 4.6.2) available from download page
+- name: Esker Web Service Samples (Java)
+  registry: download
+  url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Sample_Codes/Sample_Codes_Walkthrough_v2.html
+  language: Java
+  official: true
+  version: null
+  published: null
+  note: Sample code archive for Java (Java 1.8 or openJDK 8) using Apache Axis implementation
+- name: Esker Web Service Samples (PHP)
+  registry: download
+  url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Sample_Codes/Sample_Codes_Walkthrough_v2.html
+  language: PHP
+  official: true
+  version: null
+  published: null
+  note: Sample code archive for PHP v5.6.4 using native SOAP library
+- name: Esker Web Service Samples (VB.NET)
+  registry: download
+  url: https://doc.esker.com/eskerondemand/cv_ly/en/webservices/Content/Sample_Codes/Sample_Codes_Walkthrough_v2.html
+  language: VB.NET
+  official: true
+  version: null
+  published: null
+  note: Sample code archive for VB.NET (.NET Framework 4.6.2)

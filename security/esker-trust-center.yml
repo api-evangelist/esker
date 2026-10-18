@@ -1,0 +1,15 @@
+generated: '2026-10-18'
+method: searched
+probe: true
+source: https://www.esker.com/capabilities/security-certifications/
+url: https://www.esker.com/capabilities/security-certifications/
+certifications:
+- ISO 27001
+- HIPAA
+- GDPR
+evidence:
+- source: https://www.esker.com/capabilities/security-certifications/
+  keywords:
+  - iso 27001
+  - hipaa
+  - gdpr
